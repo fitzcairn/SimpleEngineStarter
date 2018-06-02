@@ -1,0 +1,19 @@
+/*
+ * Root SimpleGameStarter build file.
+ */
+
+plugins {
+    // Use the IDEA plugin to auto-generate IDEA project files.
+    id 'idea'
+}
+
+allprojects {
+    repositories {
+        google()
+
+        jcenter()
+
+        // Use a github repo as a dependency.
+        maven { url "https://jitpack.io" }
+    }
+}
