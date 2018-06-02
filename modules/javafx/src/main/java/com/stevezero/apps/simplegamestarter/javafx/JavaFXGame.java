@@ -1,7 +1,7 @@
 package com.stevezero.apps.simplegamestarter.javafx;
 
 
-import com.stevezero.apps.simplegame.game.manifest.impl.SimpleGame;
+import com.stevezero.apps.simplegamestarter.game.manifest.impl.SimpleGame;
 import com.stevezero.apps.simplegamestarter.javafx.assets.loader.impl.JavaFXLoader;
 import com.stevezero.apps.simplegamestarter.javafx.assets.sound.impl.JavaFXSoundManager;
 import com.stevezero.apps.simplegamestarter.javafx.controls.events.JavaFXEvent;
