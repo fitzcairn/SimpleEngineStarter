@@ -24,20 +24,12 @@ public final class SimplePlayer extends Player {
   // Velocity constants.
   private static final int MOVE_VX = 1;
   
-  // Unit mass
-  private final static float MASS = 50f;
-  
-  // Actions the player can execute.  Note that a player can be jumping and shooting at once.
-  private boolean isWalking = false;
-
   // Movement smoothers
   private boolean leftKeyDown = false;
   private boolean rightKeyDown = false;
 
-  private Engine engine;
-
   public SimplePlayer() {
-    super(MASS, 0);
+    super(50f, 0);
   }
 
   //
@@ -78,13 +70,10 @@ public final class SimplePlayer extends Player {
   //
   
   /**
-   * Override to initialize SimplePlayerAnimation.  Allows for lazy initialization.
-   * This callback is guaranteed to occur before the first update tick is processed, or
-   * Player.update will throw an exception.
+   * Override to initialize SimplePlayerAnimation.
    */
   @Override
   protected void onInitPlayer(Engine engine) {
-    this.engine = engine;
     int state = 0; // Only one sprite state.
     
     // Load the sprite states.
@@ -96,28 +85,12 @@ public final class SimplePlayer extends Player {
     sprite.setAnimationTo(state);
   }
 
-  /**
-   * Override to reset SimplePlayerAnimation when Player.resetPlayer is called.
-   */
   @Override
   protected void onResetPlayer(Engine engine) {
   }
 
-  /**
-   * Override to update velocity on Player movements.
-   */
   @Override
   protected void onUpdateBeforeVelocityApplied(Engine engine) {
-    // X Velocity -->
-    if (isWalking && facingDirection == Direction.LEFT) {
-      velocity.addX(-MOVE_VX);
-    }
-    if (isWalking && facingDirection == Direction.RIGHT) {
-      velocity.addX(MOVE_VX);
-    }
-
-    // Add a velo cap to avoid instability.
-    velocity.setX(Util.absCap(velocity.getX(), MOVE_VX));
   }
   
 
@@ -148,35 +121,31 @@ public final class SimplePlayer extends Player {
 
   private void moveRight() {
     rightKeyDown = true;
-    facingDirection = Direction.RIGHT;
-    isWalking = true;
+    velocity.setX(MOVE_VX);
   }
 
   private void moveLeft() {
     leftKeyDown = true;
-    facingDirection = Direction.LEFT;
-    isWalking = true;
+    velocity.setX(-MOVE_VX);
   }
 
   private void stopMoveLeft() {
     leftKeyDown = false;
+    velocity.setX(0);
 
     if (rightKeyDown) {
       moveRight();
       return;
     }
-    
-    isWalking = false;
   }
 
   private void stopMoveRight() {
     rightKeyDown = false;
+    velocity.setX(0);
 
     if (leftKeyDown) {
       moveLeft();
       return;
     }
-    
-    isWalking = false;
   }
 }

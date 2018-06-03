@@ -5,6 +5,7 @@ import com.stevezero.game.engine.actor.Actor;
 import com.stevezero.game.engine.graphics.backgrounds.TiledScrollingBackground;
 import com.stevezero.game.engine.graphics.rendering.Renderable;
 import com.stevezero.game.engine.map.Map;
+import com.stevezero.game.geometry.Point2;
 
 import java.util.List;
 
@@ -21,5 +22,8 @@ public final class SimpleGameStarterMap extends Map {
     // Add background.
     renderQueue.add(new TiledScrollingBackground(engine.getLoader(), "bg_tile.png", camera));
 
+    // Set the player start.
+    this.playerStart = new Point2(engine.getSystemManager().getViewWidth()/2,
+        engine.getSystemManager().getViewHeight()/2);
   }
 }

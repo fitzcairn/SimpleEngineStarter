@@ -29,22 +29,22 @@ public class SimpleGameStarter extends Manifest {
 
   @Override
   public Screen setScreenStart(Game game) {
-    return null;
+    return game.getEngine();
   }
 
   @Override
   public Screen setScreenLevelComplete(Game game) {
-    return null;
+    return game.getEngine();
   }
 
   @Override
   public Screen setScreenLoss(Game game) {
-    return null;
+    return game.getEngine();
   }
 
   @Override
   public Screen setScreenPause(Game game) {
-    return null;
+    return game.getEngine();
   }
 
   @Override
