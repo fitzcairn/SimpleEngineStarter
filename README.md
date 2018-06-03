@@ -1,8 +1,8 @@
-# SimpleGame
+# SimpleEngineStarter
 
-This is an example game implemented using [SimpleEngine](https://github.com/fitzcairn/SimpleEngine), a 2D Java game engine.  Please feel free to copy shamelessly to make your own games.
+This is an example starter project for building your game using [SimpleEngine](https://github.com/fitzcairn/SimpleEngine), a 2D Java game engine.  Please feel free to copy shamelessly to make your own games.
 
-This example game runs as a JavaFX Application and an Android app.
+This example game runs as a JavaFX Application and an Android app.  For a more complex example please see [SimpleGame](https://github.com/fitzcairn/SimpleGame).
 
 ## Getting Started
 
