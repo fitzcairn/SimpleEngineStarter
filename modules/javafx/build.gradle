@@ -18,7 +18,7 @@ mainClassName = 'com.stevezero.apps.simplegamestarter.javafx.JavaFXGame'
 
 // Dependencies
 dependencies {
-    // SimpleGame implementation.
+    // SimpleGameStarter implementation.
     compile project(':libs:game')
 }
 

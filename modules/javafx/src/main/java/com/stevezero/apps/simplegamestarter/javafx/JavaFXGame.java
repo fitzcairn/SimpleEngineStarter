@@ -1,7 +1,7 @@
 package com.stevezero.apps.simplegamestarter.javafx;
 
 
-import com.stevezero.apps.simplegamestarter.game.manifest.impl.SimpleGame;
+import com.stevezero.apps.simplegamestarter.game.manifest.impl.SimpleGameStarter;
 import com.stevezero.apps.simplegamestarter.javafx.assets.loader.impl.JavaFXLoader;
 import com.stevezero.apps.simplegamestarter.javafx.assets.sound.impl.JavaFXSoundManager;
 import com.stevezero.apps.simplegamestarter.javafx.controls.events.JavaFXEvent;
@@ -27,7 +27,7 @@ import javafx.stage.Stage;
  * Run the game as an JavaFX Application.
  */
 public class JavaFXGame extends Application {
-  private final String title = "SimpleGame";
+  private final String title = "SimpleGameStarter";
 
   // App primitives
   private Canvas screen;
@@ -57,7 +57,7 @@ public class JavaFXGame extends Application {
         controls,
         new JavaFXSoundManager(),
         new ServiceManager(new Achievements(), new Leaderboards()),
-        new SimpleGame());
+        new SimpleGameStarter());
   }
 
   @Override

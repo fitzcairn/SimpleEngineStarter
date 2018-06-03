@@ -18,10 +18,10 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
 import com.stevezero.apps.simplegamestarter.javafx.assets.drawable.impl.JavaFXDrawable;
+import com.stevezero.apps.simplegamestarter.javafx.assets.sound.impl.JavaFXSound;
 import com.stevezero.game.assets.drawable.GameDrawable;
 import com.stevezero.game.assets.loader.Loader;
 import com.stevezero.game.assets.sound.Sound;
-import com.stevezero.apps.simplegamestarter.javafx.assets.sound.impl.JavaFXSound;
 
 public class JavaFXLoader extends Loader {
 

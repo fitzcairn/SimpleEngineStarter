@@ -5,7 +5,7 @@ import com.stevezero.game.assets.loader.Loader;
 import com.stevezero.game.assets.services.AssetManager;
 import com.stevezero.game.engine.graphics.motion.animation.Animation;
 
-public final class ConsumableRest extends Animation {
+public final class SimplePlayerAnimation extends Animation {
   public static final int BANANA = 0;
   public static final int CHERRY = 1;
   public static final int DATE = 2;
@@ -17,7 +17,7 @@ public final class ConsumableRest extends Animation {
 
   private final int type;
   
-  public ConsumableRest(Loader loader, int type) {
+  public SimplePlayerAnimation(Loader loader, int type) {
     super(AssetManager.getDrawable(loader, "atlas_consumable.png"), WIDTH_PX, HEIGHT_PX, 1, true);
     this.type = type;
   }
