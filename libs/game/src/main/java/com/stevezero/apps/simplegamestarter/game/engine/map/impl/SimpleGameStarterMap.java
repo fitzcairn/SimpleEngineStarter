@@ -22,8 +22,10 @@ public final class SimpleGameStarterMap extends Map {
     // Add background.
     renderQueue.add(new TiledScrollingBackground(engine.getLoader(), "bg_tile.png", camera));
 
+    this.width = engine.getSystemManager().getViewWidth();
+    this.height = engine.getSystemManager().getViewHeight();
+
     // Set the player start.
-    this.playerStart = new Point2(engine.getSystemManager().getViewWidth()/2,
-        engine.getSystemManager().getViewHeight()/2);
+    this.playerStart = new Point2(width/2, height/2);
   }
 }

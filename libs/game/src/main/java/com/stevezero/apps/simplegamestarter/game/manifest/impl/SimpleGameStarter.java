@@ -3,6 +3,8 @@ package com.stevezero.apps.simplegamestarter.game.manifest.impl;
 import java.util.List;
 
 import com.stevezero.apps.simplegamestarter.game.engine.actor.player.impl.SimplePlayer;
+import com.stevezero.apps.simplegamestarter.game.engine.ai.impl.SimpleGameStarterAi;
+import com.stevezero.apps.simplegamestarter.game.engine.hud.impl.SimpleGameStarterHud;
 import com.stevezero.apps.simplegamestarter.game.engine.map.impl.SimpleGameStarterMap;
 import com.stevezero.game.Game;
 import com.stevezero.game.assets.font.manager.Fonts;
@@ -29,7 +31,10 @@ public class SimpleGameStarter extends Manifest {
 
   @Override
   public Screen setScreenStart(Game game) {
-    return game.getEngine();
+    Screen s = game.getEngine();
+    s.activate();
+    s.registerControls();
+    return s;
   }
 
   @Override
@@ -72,11 +77,12 @@ public class SimpleGameStarter extends Manifest {
 
   @Override
   protected Hud createAndInitHud(Engine engine) {
-    return null;
+    return new SimpleGameStarterHud(engine);
   }
 
   @Override
   protected Ai createAndInitAi(Engine engine) {
-    return null;
+    Ai gameAi = new SimpleGameStarterAi();
+    return gameAi;
   }
 }

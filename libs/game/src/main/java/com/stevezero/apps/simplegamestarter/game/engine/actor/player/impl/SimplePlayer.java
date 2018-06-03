@@ -14,6 +14,7 @@ import com.stevezero.game.engine.actor.player.Player;
 import com.stevezero.game.engine.actor.projectile.Projectile;
 import com.stevezero.game.engine.graphics.motion.MotionGraph;
 import com.stevezero.game.engine.physics.Direction;
+import com.stevezero.game.geometry.Point2;
 import com.stevezero.game.geometry.Vector2;
 import com.stevezero.game.util.Util;
 
@@ -22,7 +23,7 @@ import com.stevezero.game.util.Util;
  */
 public final class SimplePlayer extends Player {
   // Velocity constants.
-  private static final int MOVE_VX = 1;
+  private static final int MOVE_VX = 5;
   
   // Movement smoothers
   private boolean leftKeyDown = false;
@@ -92,7 +93,6 @@ public final class SimplePlayer extends Player {
   @Override
   protected void onUpdateBeforeVelocityApplied(Engine engine) {
   }
-  
 
   @Override
   protected void onPlayerUpdate(Engine engine) {
